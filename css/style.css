@@ -58,6 +58,76 @@ a {
     color: var(--main-bg-color)
 }
 
+/* 
+Entête de page avec logo et menu de navigation
+. Hauteur fixe de 79px (cf. spc maquette : 30px padding top + 19px image + 30px padding bottom
+. Affichage flex et row pour une répartition horizontale du logo et de la barre de menu
+. space-between : les éléments sont étirés sur tout l'axe ce qui permet d'avoir le logo à gauche et la barre de menu à droite */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 79px;
+}
+
+/* 
+Image du logo dans le header
+. Hauteur de l'image du logo fxée à 19px (cf. spec maquette)
+. Padding : marge intérieure : pas de padding à droite et à gauche, padding de 30px au dessus et au dessous de l'image 
+*/
+header img {
+    height: 19px;
+    padding: 30px 0px 30px 0px;
+}
+
+/* 
+Liste des items du menu
+. list-style: none => on supprime les puces pour chaque item de la liste
+. display: flex et direction row (par défaut) => pour que les items s'affiche horizontalement 
+. gap: 68px : écart entre chaque item de la liste (cf. spec maquette) 
+. margin:0 : suppression des marges extérieures pour un alignement parfait avec le conteneur header 
+*/
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 68px;
+    margin: 0;
+    padding: 0 0px 0 50px;
+}
+
+/* 
+item du menu de type ancre
+. font-size => taille de la police 
+. font-weight => graisse
+. display: flex => pour transformer un élément de type inline en un élément de type block 
+    et ainsi pouvoir utiliser les propriétés de dimensionnement comme height, 
+    mais aussi les propriétés de positionnement comme align-items 
+. On force la hauteur à 35px => positionne le texte du lien au bon endroit et permettra d'afficher 
+    la bordure bleu au bon endroit lors du survol avec la souris.
+. align-items: flex-end => affiche le texte du lien en bas de la zone réservé pour la balise a 
+*/
+nav ul a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    display:flex;
+    height: 35px;
+    align-items: flex-end;
+}
+
+/* 
+Affichage dynamique lorsque la souris survole un item du menu
+. Border-top => on fait apparaître la bordure du haut d'une épaisseur de 2 px
+. height:33px => On réduit de 2 px la taille du conteneur de la balise a pour absorber le 2px pris 
+    par la bordure et éviter un effet visuel de décalage du texte vers le bas lors du survol avec la souris
+*/
+nav ul a:hover {
+    color: #0065FC;
+    height: 33px;
+    border-top:#0065FC solid 2px;  
+}
+
+
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
     display: flex;
