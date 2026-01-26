@@ -128,6 +128,112 @@ nav ul a:hover {
     border-top:#0065FC solid 2px;  
 }
 
+/* 
+Titre principal de la page
+*/
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+/* 
+Texte dans les balises P (paragraphe)
+*/
+P {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;    
+}
+
+/*
+Barre et Formulaire de recherche
+Affichage de type Flex (direction row par défaut) pour que les éléments s'affichent horizontalement
+et que l'on puisse leur appliquer des propriétés de dimensionnement.
+*/
+.search-bar {
+    display: flex;
+    margin: 35px 0;
+    height: 49px;
+}
+
+/*
+Affichage de type flex également pour le conteneur du formulaire
+de façon à ce que les champs occupent tout l'espace réservé, notamment en hauteur
+*/
+.search-form {
+    display:flex;
+    align-items: stretch;
+}
+
+/*
+Champ de saisie des critères de recherche
+On applique les propriétés de mise en forme requises par la maquette : 
+. Marge intérieur (padding) gauche et droite de 24px
+. Style de la bordure : pointillés
+. Couleur de la bordure.
+. Epaisseur de la bordure : 1px pour la bordure haute et basse, 0px pour les bordures gauche et droite pour les faire disparaître
+*/
+.search-form input {
+    padding: 0 24px 0 24px;
+    border-style: dotted;
+    border-color: var(--main-bg-color);
+    border-width: 1px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color:#000;
+}
+
+
+/*
+Effet visuel lors du focus dans le champ input
+Non demandé dans la maquette (à débattre)
+Suppression du comportement par défaut lors du focus : une bordure pleine de 2px qui entoure tout le champ
+au profit du changement de couleur des pointillés haut et bas
+*/
+.search-form input:focus {
+    outline: none; 
+    border-color: var(--main-bg-color);
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+/*
+Bouton de lancement de la recherche
+On applique les propriétés de mise en forme requises par la maquette : 
+. Marges intérieures (padding) gauche et droite de 16px
+. Bords arrondis à droite 
+. Non demandé dans la maquette (à débattre) : j'ai modifié l'aspect sur pointeur de la souris lors du survol du bouton
+  de façon à ce qu'il soit conforme à l'affichage des CTA de type lien (plus user friendly à mon sens).
+*/
+.search-form button {
+    font-size: 18px;
+    padding: 0 16px 0 16px;
+    color: white;
+    font-weight: 700;
+    border-radius: 0 15px 15px 0;
+    border: 1px solid var(--main-color);
+    background:  var(--main-color);
+    cursor: pointer;
+
+}
+
+/*
+Icon de localisation
+Affichage de type flex également qu'il ne soit plus de type inline 
+de façon à pouvoir appliquer des propriétés de dimensionnement et de positionnement
+*/
+.search-bar i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    background-color: var(--main-bg-color);
+    border-radius: 15px 0 0 15px;
+    color: black;
+    border: 1px solid var(--main-bg-color);
+}
+
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
