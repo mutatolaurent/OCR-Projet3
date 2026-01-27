@@ -58,12 +58,16 @@ a {
     color: var(--main-bg-color)
 }
 
+/*****************/
+/* DEBUT ETAPE 3 */
+/*****************/
+
 /* 
 Entête de page avec logo et menu de navigation
 . Hauteur fixe de 79px (cf. spc maquette : 30px padding top + 19px image + 30px padding bottom
 . Affichage flex et row pour une répartition horizontale du logo et de la barre de menu
 . space-between : les éléments sont étirés sur tout l'axe ce qui permet d'avoir le logo à gauche et la barre de menu à droite */
-header {
+.main-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -76,7 +80,7 @@ Image du logo dans le header
 . Hauteur de l'image du logo fxée à 19px (cf. spec maquette)
 . Padding : marge intérieure : pas de padding à droite et à gauche, padding de 30px au dessus et au dessous de l'image 
 */
-header img {
+.main-header img {
     height: 19px;
     padding: 30px 0px 30px 0px;
 }
@@ -88,7 +92,7 @@ Liste des items du menu
 . gap: 68px : écart entre chaque item de la liste (cf. spec maquette) 
 . margin:0 : suppression des marges extérieures pour un alignement parfait avec le conteneur header 
 */
-nav ul {
+.main-nav ul {
     list-style: none;
     display: flex;
     gap: 68px;
@@ -103,16 +107,19 @@ item du menu de type ancre
 . display: flex => pour transformer un élément de type inline en un élément de type block 
     et ainsi pouvoir utiliser les propriétés de dimensionnement comme height, 
     mais aussi les propriétés de positionnement comme align-items 
-. On force la hauteur à 35px => positionne le texte du lien au bon endroit et permettra d'afficher 
+. On force la hauteur à 33px => positionne le texte du lien au bon endroit et permettra d'afficher 
     la bordure bleu au bon endroit lors du survol avec la souris.
-. align-items: flex-end => affiche le texte du lien en bas de la zone réservé pour la balise a 
+. On affiche une bordure blanche de 2 pixels qui ne se voit pas (blanc sur balnc) pour reserver l'emplacement
+    et éviter un effet visuel de décalage du texte vers le bas lors du survol de la souris
+. align-items: flex-end => affiche le texte du lien en bas de la zone réservée pour la balise a 
 */
-nav ul a {
+.main-nav ul a {
     font-size: 16px;
     font-weight: 400;
     color: #000;
     display:flex;
-    height: 35px;
+    height: 33px;
+    border-top:white solid 2px; 
     align-items: flex-end;
 }
 
@@ -122,12 +129,15 @@ Affichage dynamique lorsque la souris survole un item du menu
 . height:33px => On réduit de 2 px la taille du conteneur de la balise a pour absorber le 2px pris 
     par la bordure et éviter un effet visuel de décalage du texte vers le bas lors du survol avec la souris
 */
-nav ul a:hover {
+.main-nav ul a:hover {
     color: #0065FC;
-    height: 33px;
     border-top:#0065FC solid 2px;  
 }
 
+
+/*****************/
+/* DEBUT ETAPE 4 */
+/*****************/
 /* 
 Titre principal de la page
 */
@@ -158,67 +168,6 @@ et que l'on puisse leur appliquer des propriétés de dimensionnement.
 }
 
 /*
-Affichage de type flex également pour le conteneur du formulaire
-de façon à ce que les champs occupent tout l'espace réservé, notamment en hauteur
-*/
-.search-form {
-    display:flex;
-    align-items: stretch;
-}
-
-/*
-Champ de saisie des critères de recherche
-On applique les propriétés de mise en forme requises par la maquette : 
-. Marge intérieur (padding) gauche et droite de 24px
-. Style de la bordure : pointillés
-. Couleur de la bordure.
-. Epaisseur de la bordure : 1px pour la bordure haute et basse, 0px pour les bordures gauche et droite pour les faire disparaître
-*/
-.search-form input {
-    padding: 0 24px 0 24px;
-    border-style: dotted;
-    border-color: var(--main-bg-color);
-    border-width: 1px 0;
-    font-size: 18px;
-    font-weight: 700;
-    color:#000;
-}
-
-
-/*
-Effet visuel lors du focus dans le champ input
-Non demandé dans la maquette (à débattre)
-Suppression du comportement par défaut lors du focus : une bordure pleine de 2px qui entoure tout le champ
-au profit du changement de couleur des pointillés haut et bas
-*/
-.search-form input:focus {
-    outline: none; 
-    border-color: var(--main-bg-color);
-    border-width: 1px 0;
-    border-style: solid;
-}
-
-/*
-Bouton de lancement de la recherche
-On applique les propriétés de mise en forme requises par la maquette : 
-. Marges intérieures (padding) gauche et droite de 16px
-. Bords arrondis à droite 
-. Non demandé dans la maquette (à débattre) : j'ai modifié l'aspect sur pointeur de la souris lors du survol du bouton
-  de façon à ce qu'il soit conforme à l'affichage des CTA de type lien (plus user friendly à mon sens).
-*/
-.search-form button {
-    font-size: 18px;
-    padding: 0 16px 0 16px;
-    color: white;
-    font-weight: 700;
-    border-radius: 0 15px 15px 0;
-    border: 1px solid var(--main-color);
-    background:  var(--main-color);
-    cursor: pointer;
-
-}
-
-/*
 Icon de localisation
 Affichage de type flex également qu'il ne soit plus de type inline 
 de façon à pouvoir appliquer des propriétés de dimensionnement et de positionnement
@@ -232,6 +181,67 @@ de façon à pouvoir appliquer des propriétés de dimensionnement et de positio
     border-radius: 15px 0 0 15px;
     color: black;
     border: 1px solid var(--main-bg-color);
+}
+
+/*
+Affichage de type flex également pour le conteneur du formulaire
+de façon à ce que les champs occupent tout l'espace réservé, notamment en hauteur
+*/
+.search-form {
+    display:flex;
+    align-items: stretch;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/*
+Champ de saisie des critères de recherche
+On applique les propriétés de mise en forme requises par la maquette : 
+. Marge intérieur (padding) gauche et droite de 24px
+. Style de la bordure : pointillés
+. Couleur de la bordure.
+. Epaisseur de la bordure : 1px pour la bordure haute et basse, 0px pour les bordures gauche et droite pour les faire disparaître
+*/
+.search-form input {
+    font-size:inherit;
+    font-weight: inherit;
+    padding: 0 24px 0 24px;
+    border-style: dotted;
+    border-color: var(--main-bg-color);
+    border-width: 1px 0;
+}
+
+
+/*
+Effet visuel lors du focus dans le champ input
+Non demandé dans la maquette (à débattre)
+Suppression du comportement par défaut lors du focus : une bordure pleine de 2px qui entoure tout le champ
+au profit du changement de couleur des pointillés haut et bas
+*/
+.search-form input:focus {
+    outline: none; 
+    border-color: var(--main-bg-color);
+    border-width: 2px 0;
+    border-style: solid;
+}
+
+/*
+Bouton de lancement de la recherche
+On applique les propriétés de mise en forme requises par la maquette : 
+. Marges intérieures (padding) gauche et droite de 16px
+. Bords arrondis à droite 
+. Non demandé dans la maquette (à débattre) : j'ai modifié l'aspect sur pointeur de la souris lors du survol du bouton
+  de façon à ce qu'il soit conforme à l'affichage des CTA de type lien (plus user friendly à mon sens).
+*/
+.search-form button {
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0 16px 0 16px;
+    color: white;
+    border-radius: 0 15px 15px 0;
+    border: 1px solid var(--main-color);
+    background:  var(--main-color);
+    cursor: pointer;
 }
 
 
