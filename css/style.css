@@ -344,6 +344,43 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
     width: 65%;
 }
 
+.hebergement-cards {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 0 30px;
+
+}
+
+.hebergement-cards a {
+    flex: 1 1 calc(33.33% - 30px); /* 3 cards par ligne, adaptatives */
+    /* text-decoration: none;         Optionnel */
+    margin-top: 30px;
+}
+
+.hebergement-cards .card-title {
+    /* margin-top: 4px;  
+    margin-bottom: 8px;  */
+    margin: 4px 0 8px 15px; 
+}
+
+.hebergement-cards .card-subtitle {
+    /* margin-top: 4px;  
+    margin-bottom: 8px;  */
+    margin-left: 15px;
+}
+
+.hebergement-cards .card-rating {
+    margin-top: 8px;
+    margin-left: 15px;
+}
+*
+.hebergement-cards img {
+    width: 100%;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 /****** Populaires ***********/
 .populaires {
     width: 32%;
@@ -357,7 +394,7 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
 
 .populaires-cards .card {
     display: flex;
-    margin-top: 33px;
+    margin-top: 30px;
 }
 
 .populaires-cards img {
