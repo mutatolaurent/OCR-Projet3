@@ -7,6 +7,7 @@
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
+    --filter-border-color: #D9D9D9;
 }
 
 .fa-solid {
@@ -191,7 +192,7 @@ de façon à ce que les champs occupent tout l'espace réservé, notamment en ha
     display:flex;
     align-items: stretch;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 700; 
 }
 
 /*
@@ -244,6 +245,86 @@ On applique les propriétés de mise en forme requises par la maquette :
     cursor: pointer;
 }
 
+/*****************/
+/* DEBUT ETAPE 5 */
+/*****************/
+/* 
+Container de la Barre de filtres
+Affichage de type Flex (direction row par défaut) pour que les éléments s'alignent horizontalement
+et qu'ils puissent hériter des propriétrés d'étirement sur toute la hauteur (stretch).
+*/
+.filter-bar {
+    display: flex;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    gap: 15px;
+    margin-bottom: 35px;
+    align-items: stretch; /* par défaut */
+}
+
+/*
+Texte d'introduction des filtres
+Affichage de type flex pour qu'il soit parfaitement alignée verticalement 
+avec le texte des boutons de filtres
+Les propriétés de font sont héritées du parent.
+*/
+.filter-bar span {
+    display: flex;
+    align-items: center;
+}
+
+/*
+Bouton des filtres
+Display flex pour pouvoir centrer le texte du bouton verticalement
+*/
+.filter-bar a {
+    border-radius: 25px;
+    border: 2px solid var(--filter-border-color);
+    padding: 0 19px 0 19px;
+    display: flex;
+    align-items: center;
+
+}
+
+/*
+Effet au survol du bouton de filtre avec la souris
+On chage la coulour du fod
+*/ 
+.filter-bar a:hover {
+    background: var(--filter-bg-color);
+}
+
+/*
+On applique une marge extérieure à droite de l'icône pour créer un espace avec le texte du bouton (cf. maquette)
+*/
+.filter-bar i {
+    margin: 0 10px 0 0;
+}
+
+/* 
+Container de la Barre d'information
+Affichage de type Flex (direction row par défaut) pour que les éléments s'alignet horizontalement
+et qu'ils puissent hériter des propriétrés de dimensionnement du container (hauteur: 24px).
+*/
+.search-info {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+/*
+Icône d'information
+Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du paragraphe associé
+*/
+.search-info i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
