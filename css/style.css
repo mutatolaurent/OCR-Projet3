@@ -493,17 +493,48 @@ Style des images des cards hébergement
     margin-bottom: 5px;
 }
 
-/****** Activitéss ***********/
+/****** Activités ***********/
 /*****************/
 /* DEBUT ETAPE 8 */
 /*****************/
 /* 
 
 */
-.activites {
+
+/* .activites {
     width: 100%;
-    padding: 30px 0px 30px 30px;
+} */
+
+.activites section {
+    padding: 30px;
+} 
+
+.activites-cards {
+    display:flex;
+    column-gap:30px;
+    height:439px;
+    align-items: flex-start;
+    justify-content: space-between;
+} 
+
+.activites-cards a {
+    flex: 0 1 calc(25% - 30px);
     display: flex;
+    margin-top: 30px;
+    height:439px;
+
+} 
+/* .activites-cards article {
+    border-radius: 20px;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.10);
+
+} */
+
+.activites-cards img {
+    height:380px;
+    width:100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 
