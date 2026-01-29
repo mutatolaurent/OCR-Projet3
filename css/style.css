@@ -59,6 +59,7 @@ a {
     color: var(--main-bg-color)
 }
 
+
 /*****************/
 /* DEBUT ETAPE 3 */
 /*****************/
@@ -335,45 +336,110 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
 .hebergements-and-populaires section {
     background-color: var(--main-bg-color);
     border-radius: 20px;
-    padding: 30px;
+    /* padding: 30px; */
     box-sizing: border-box;
 }
 
 /****** Hebergements ***********/
+/*****************/
+/* DEBUT ETAPE 6 */
+/*****************/
+/* 
+La largeur de la zone d'affichage des informations sur 
+les hébergements est initialisée 
+à 65% de la largeur de son container
+*/
 .hebergements {
     width: 65%;
+    /* padding: 30px 15px 0px 15px; */
+    padding: 30px 0px 30px 30px;
 }
 
+/*
+Le type de la zone d'affichage des cards d'hébergement est 
+initialisé à FLEX pour que les cards s'affichent horizontalement 
+les unes à côté des autres.
+La proprité flex-wrap:wrap permet de continuer l'affichage sur la ligne
+suivante s'il n'y a plus de place sur la ligne courante.
+Column-gap fixe l'espace (à droite) entre chaque cards de la ligne
+*/
 .hebergement-cards {
     display:flex;
     flex-wrap: wrap;
-    gap: 0 30px;
-
+    column-gap: 30px;
 }
 
+/*
+On gère ici le nombre de cards à afficher sur une ligne
+On souhaite :
+. les cards aient toujours la même largeur
+. même s'il n'y en a que 1 ou 2 sur la dernière ligne
+. et qu'elles ne s'étirent pas pour remplir toute la ligne
+[flex-grow] = 0  => ne pas s'étirer
+[flex-shrink] = 1 => peut rétrécir si nécessaire
+[flex-basis] = calc(33.33% - 30px) => largeur de cards calculée en tenant compte 
+des marges internes du container ".hebergement"
+*/
 .hebergement-cards a {
-    flex: 1 1 calc(33.33% - 30px); /* 3 cards par ligne, adaptatives */
-    /* text-decoration: none;         Optionnel */
+    flex: 0 0 calc(33.33% - 30px); 
+    /* margin: 30px 15px 0 15px; */
     margin-top: 30px;
 }
 
+/*
+On force la hauteur de la card à occuper 100% de la hauteur disponible.
+Ceci pour que toutes les cards d'une même ligne soient parfaitrement alignbées
+en haut et en bas, même si le contenu d'une card de la ligne et plus chargé que celui des autres cards
+*/
+/* .hebergement-cards .card {
+        height: 100%;
+} */
+
+/*
+Style du CTA "Afficher plus de cards
+*/
+.plus-de-card {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+/*
+Style du titre des cards
+On adapte la classe .card-title existante, avec des valeurs
+de marges internes propres aux cards d'hébergement
+*/
 .hebergement-cards .card-title {
     /* margin-top: 4px;  
     margin-bottom: 8px;  */
     margin: 4px 0 8px 15px; 
 }
 
+/*
+Style du sous titre des cards
+On adapte la classe .card-subtitle existante, avec des valeurs
+de marges internes propres aux cards d'hébergement
+*/
 .hebergement-cards .card-subtitle {
     /* margin-top: 4px;  
     margin-bottom: 8px;  */
     margin-left: 15px;
 }
 
+/*
+Style des notes utilisateurs des cards
+On adapte la classe .card-rating existante, avec des valeurs
+de marges internes propres aux cards d'hébergement
+*/
 .hebergement-cards .card-rating {
     margin-top: 8px;
     margin-left: 15px;
 }
-*
+
+/*
+Style des images des cards hébergement
+*/
 .hebergement-cards img {
     width: 100%;
     height: 124px;
@@ -384,6 +450,7 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
 /****** Populaires ***********/
 .populaires {
     width: 32%;
+    padding: 30px;
 }
 
 .populaires-title {
@@ -410,7 +477,7 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 .populaires-cards .card-title {
@@ -426,6 +493,18 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
     margin-bottom: 5px;
 }
 
+/****** Activitéss ***********/
+/*****************/
+/* DEBUT ETAPE 8 */
+/*****************/
+/* 
+
+*/
+.activites {
+    width: 100%;
+    padding: 30px 0px 30px 30px;
+    display: flex;
+}
 
 
 
