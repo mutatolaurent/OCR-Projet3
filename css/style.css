@@ -367,6 +367,7 @@ Column-gap fixe l'espace (à droite) entre chaque cards de la ligne
     display:flex;
     flex-wrap: wrap;
     column-gap: 30px;
+    /* justify-content: space-between; */
 }
 
 /*
@@ -381,7 +382,7 @@ On souhaite :
 des marges internes du container ".hebergement"
 */
 .hebergement-cards a {
-    flex: 0 0 calc(33.33% - 30px); 
+    flex: 0 1 calc(33.33% - 30px); 
     /* margin: 30px 15px 0 15px; */
     margin-top: 30px;
 }
@@ -497,23 +498,83 @@ Style des images des cards hébergement
 /*****************/
 /* DEBUT ETAPE 8 */
 /*****************/
+
 /* 
-
+Initialisation des marges internes de la section des activités
 */
-
-/* .activites {
-    width: 100%;
-} */
-
-.activites section {
-    padding: 30px;
+.activites {
+    padding: 35px 30px 30px 30px;
 } 
 
-.activites-cards {
+/* 
+styles du titre de la section Activité
+*/
+.activites h2 {
+    padding: 30px 0 0 0;
+    margin: 0;
+}
+
+/*
+Style du container qu iaccueille les cards des activités
+display:flex : les cards s'affichent en ligne côte-à-côte.
+gap: espace entre chaque card.
+flex-wrap:wrap : passe à la ligne suivante si plus de place sur la ligne courante
+space-between : les cards se répartissent équitablement sur 
+toute la ligne. Important: Le premier card est aligné sur le bord du conteneur 
+et le bord droit du dernier card est aussi aligné sur le bord de l'élément.
+*/
+.activites-cards { 
+    display:flex; 
+    column-gap:30px; 
+    flex-wrap: wrap;
+    /* justify-content: space-between;  */
+}
+
+/*
+Style de la basile A qui encapsule les cards et fait donc office de container
+flex:
+. 0 = non étirable (permet de conserver les proportions si le nombre de card par ligne est inférieur à 4 
+. 1 = peu se réduire 
+. calc(25% -22.5px) permet de calculer l'espace entre chaque cards en 
+*/
+.activites-cards a { 
+    flex: 0 0 calc(25% - 22.5px);
+    display: flex; 
+    margin-top: 30px; 
+} 
+
+.activites-cards .card {
+    height:439px;
+    flex-grow: 1; /* Solution pour que la card s'étire sur toute la largeur */
+    flex-direction: column;
+    /* height:100%;   */
+    display: flex;
+    padding:0;
+}
+
+.activites-cards img { 
+    height:380px; 
+    width:100%; 
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    /* object-fit:cover;  */
+}
+
+.activites-cards h3 {
+    margin: 0;
+    /* padding: 20px 19px 20px 19px; */
+    padding: 0 19px 0 19px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+
+/* .activites-cards {
     display:flex;
     column-gap:30px;
-    height:439px;
-    align-items: flex-start;
+    flex-wrap: wrap;
     justify-content: space-between;
 } 
 
@@ -521,21 +582,23 @@ Style des images des cards hébergement
     flex: 0 1 calc(25% - 30px);
     display: flex;
     margin-top: 30px;
-    height:439px;
-
+    height:439px; 
 } 
-/* .activites-cards article {
-    border-radius: 20px;
-    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.10);
 
-} */
+.activites-cards .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 .activites-cards img {
-    height:380px;
+    flex-grow: 1;
+    /* height:380px;   *//*
     width:100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-}
+    object-fit:cover;
+} */
 
 
 
