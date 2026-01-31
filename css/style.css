@@ -109,10 +109,9 @@ item du menu de type ancre
 . display: flex => pour transformer un élément de type inline en un élément de type block 
     et ainsi pouvoir utiliser les propriétés de dimensionnement comme height, 
     mais aussi les propriétés de positionnement comme align-items 
-. On force la hauteur à 33px => positionne le texte du lien au bon endroit et permettra d'afficher 
+. On force la hauteur à 35px => positionne le texte du lien au bon endroit et permettra d'afficher 
     la bordure bleu au bon endroit lors du survol avec la souris.
-. On affiche une bordure blanche de 2 pixels qui ne se voit pas (blanc sur balnc) pour reserver l'emplacement
-    et éviter un effet visuel de décalage du texte vers le bas lors du survol de la souris
+. box-sizing:border-box : la bordure est inclu dans la hauteur de 35px
 . align-items: flex-end => affiche le texte du lien en bas de la zone réservée pour la balise a 
 */
 .main-nav ul a {
@@ -120,16 +119,17 @@ item du menu de type ancre
     font-weight: 400;
     color: #000;
     display:flex;
-    height: 33px;
-    border-top:white solid 2px; 
+    height: 35px;
     align-items: flex-end;
+    box-sizing: border-box;
 }
 
 /* 
 Affichage dynamique lorsque la souris survole un item du menu
-. Border-top => on fait apparaître la bordure du haut d'une épaisseur de 2 px
-. height:33px => On réduit de 2 px la taille du conteneur de la balise a pour absorber le 2px pris 
-    par la bordure et éviter un effet visuel de décalage du texte vers le bas lors du survol avec la souris
+. Border-top => on fait apparaître la bordure du haut d'une épaisseur de 2 px.
+. Comme l'élément A est initialisé avec box-sizing:border-box on évite un effet visuel 
+  de décalage du texte vers le bas lorsque la bordure apparaît.
+. 
 */
 .main-nav ul a:hover {
     color: #0065FC;
