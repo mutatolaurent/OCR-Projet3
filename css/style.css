@@ -8,6 +8,7 @@
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
     --filter-border-color: #D9D9D9;
+    --gap-standard: 30px;
 }
 
 .fa-solid {
@@ -60,11 +61,32 @@ a {
     color: var(--main-bg-color)
 }
 
+.search-filter-text {
+    font-size: 18px;
+    font-weight: 700; 
+}
 
-/*****************/
-/* DEBUT ETAPE 3 */
-/*****************/
+/* 
+Titre principal de la page
+*/
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
 
+/* 
+Texte dans les balises P (paragraphe)
+*/
+P {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;    
+}
+
+/****************************/
+/* ETAPE 3 : Entete du site */
+/****************************/
 /* 
 Entête de page avec logo et menu de navigation
 . Hauteur fixe de 79px (cf. spc maquette : 30px padding top + 19px image + 30px padding bottom
@@ -85,7 +107,7 @@ Image du logo dans le header
 */
 .main-header img {
     height: 19px;
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0px;
 }
 
 /* 
@@ -100,7 +122,7 @@ Liste des items du menu
     display: flex;
     gap: 68px;
     margin: 0;
-    padding: 0 0px 0 50px;
+    padding-bottom: 50px;
 }
 
 /* 
@@ -138,26 +160,9 @@ Affichage dynamique lorsque la souris survole un item du menu
 }
 
 
-/*****************/
-/* DEBUT ETAPE 4 */
-/*****************/
-/* 
-Titre principal de la page
-*/
-h1 {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-}
-
-/* 
-Texte dans les balises P (paragraphe)
-*/
-P {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0px;    
-}
+/********************************/
+/* ETAPE 4 : Barre de recherche */
+/********************************/
 
 /*
 Barre et Formulaire de recherche
@@ -193,8 +198,8 @@ de façon à ce que les champs occupent tout l'espace réservé, notamment en ha
 .search-form {
     display:flex;
     align-items: stretch;
-    font-size: 18px;
-    font-weight: 700; 
+    /* font-size: 18px;
+    font-weight: 700;  */
 }
 
 /*
@@ -208,12 +213,11 @@ On applique les propriétés de mise en forme requises par la maquette :
 .search-form input {
     font-size:inherit;
     font-weight: inherit;
-    padding: 0 24px 0 24px;
+    padding: 0 24px;
     border-style: dotted;
     border-color: var(--main-bg-color);
     border-width: 1px 0;
 }
-
 
 /*
 Effet visuel lors du focus dans le champ input
@@ -239,7 +243,7 @@ On applique les propriétés de mise en forme requises par la maquette :
 .search-form button {
     font-size: inherit;
     font-weight: inherit;
-    padding: 0 16px 0 16px;
+    padding: 0 16px;
     color: white;
     border-radius: 0 15px 15px 0;
     border: 1px solid var(--main-color);
@@ -247,9 +251,9 @@ On applique les propriétés de mise en forme requises par la maquette :
     cursor: pointer;
 }
 
-/*****************/
-/* DEBUT ETAPE 5 */
-/*****************/
+/******************************/
+/* ETAPE 5 : Barre de filtres */
+/******************************/
 /* 
 Container de la Barre de filtres
 Affichage de type Flex (direction row par défaut) pour que les éléments s'alignent horizontalement
@@ -258,8 +262,8 @@ et qu'ils puissent hériter des propriétrés d'étirement sur toute la hauteur 
 .filter-bar {
     display: flex;
     height: 50px;
-    font-size: 18px;
-    font-weight: 700;
+    /* font-size: 18px;
+    font-weight: 700; */
     gap: 15px;
     margin-bottom: 35px;
     align-items: stretch; /* par défaut */
@@ -283,15 +287,14 @@ Display flex pour pouvoir centrer le texte du bouton verticalement
 .filter-bar a {
     border-radius: 25px;
     border: 2px solid var(--filter-border-color);
-    padding: 0 19px 0 19px;
+    padding: 0 19px;
     display: flex;
     align-items: center;
-
 }
 
 /*
 Effet au survol du bouton de filtre avec la souris
-On chage la coulour du fod
+On change la coulour du fond
 */ 
 .filter-bar a:hover {
     background: var(--filter-bg-color);
@@ -325,7 +328,6 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 /****** Hebergements And Populaires ***********/
@@ -341,10 +343,9 @@ Affichage de type flex pour qu'il soit parfaitement aligné avec le texte du par
     box-sizing: border-box;
 }
 
-/****** Hebergements ***********/
-/*****************/
-/* DEBUT ETAPE 6 */
-/*****************/
+/*************************************/
+/* ETAPE 6 et 7 : cards Hébergements */
+/*************************************/
 /* 
 La largeur de la zone d'affichage des informations sur 
 les hébergements est initialisée 
@@ -367,8 +368,8 @@ Row-gap fixe l'expace entre chaque ligne
 .hebergement-cards {
     display:flex;
     flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 30px;
+    column-gap: var(--gap-standard);
+    row-gap: var(--gap-standard);
     /* justify-content: space-between; */
 }
 
@@ -386,8 +387,8 @@ Principe: pour 3 colonnes, il n'y a que 2 espaces de 30px. Le calcul exact pour 
 précision parfaite est : flex: 0 1 calc(33.33% - (30px * 2 / 3)); soit calc(33.33% - 20px).
 */
 .hebergement-cards a {
-    flex: 0 1 calc(33.33% - 20px); 
-    /* margin-top: 30px; */
+    /* flex: 0 1 calc(33.33% - 20px); */
+    flex: 0 1 calc(33.33% - (var(--gap-standard) * 2 / 3));
 }
 
 /*
@@ -395,9 +396,11 @@ On force la hauteur de la card à occuper 100% de la hauteur disponible.
 Ceci pour que toutes les cards d'une même ligne soient parfaitrement alignbées
 en haut et en bas, même si le contenu d'une card de la ligne et plus chargé que celui des autres cards
 */
-/* .hebergement-cards .card {
+/*
+.hebergement-cards .card {
         height: 100%;
-} */
+} 
+*/
 
 /*
 Style du lien "Afficher plus de cards"
@@ -446,13 +449,14 @@ Style des images des cards hébergement
 */
 .hebergement-cards img {
     width: 100%;
-    /* height: 124px; */
     height: 124px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-/****** Populaires ***********/
+/********************/
+/* Cards populaires */
+/********************/
 .populaires {
     width: 32%;
     padding: 30px;
@@ -464,6 +468,10 @@ Style des images des cards hébergement
     align-items: center;
 }
 
+.populaires-title i {
+    padding-bottom: 30px;
+}
+
 /*
 LS: Changement effectué vs la version initiale pour bénéficier de la propriété row-gap (idem hebergement-card)
 et faire porter la marge sous le titre H2 par la classe section-title
@@ -471,7 +479,7 @@ et faire porter la marge sous le titre H2 par la classe section-title
 .populaires-cards {
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: var(--gap-standard);
 } 
 
 .populaires-cards .card {
@@ -508,11 +516,9 @@ et faire porter la marge sous le titre H2 par la classe section-title
     margin-bottom: 5px;
 }
 
-/****** Activités ***********/
-/*****************/
-/* DEBUT ETAPE 8 */
-/*****************/
-
+/*****************************/
+/* ETAPE 8 : Cards activités */
+/*****************************/
 /* 
 Initialisation des marges internes de la section des activités
 */
@@ -539,10 +545,9 @@ et le bord droit du dernier card est aussi aligné sur le bord de l'élément.
 */
 .activites-cards { 
     display:flex; 
-    column-gap:30px; 
-    row-gap: 30px;
+    column-gap: var(--gap-standard); 
+    row-gap: var(--gap-standard);
     flex-wrap: wrap;
-    /* justify-content: space-between;  */
 }
 
 /*
@@ -557,14 +562,14 @@ On souhaite :
   des espaces entre chaque card : 30px (cf. propriété column-gap de la classe parente).
   Principe: pour 4 colonnes, il n'y a que 3 espaces de 30px. Le calcul exact pour une 
   précision parfaite est : flex: 0 1 calc(25% - (30px * 3 / 4)); soit calc(25% - 22.5px).
-  Style de la basile A qui encapsule les cards et fait donc office de container.
+  Style de la balise A qui encapsule les cards et fait donc office de container.
 On donne également  ce container la propriété display:flex pour que l'on puisse
 forcer ces flex-item de s'étirer sur tout l'esapce disponible
 */
 .activites-cards a { 
-    flex: 0 1 calc(25% - 22.5px);
+    /* flex: 0 1 calc(25% - 22.5px); */
+    flex: 0 1 calc(25% - (var(--gap-standard) * 3 / 4));
     display: flex; 
-    /* margin-top: 30px;  */
 } 
 
 /*
@@ -597,14 +602,51 @@ Style de l'image de la card
 Style du titre de la card
 Display:flex pour pouvoir centrer le texte verticalement
 */
-.activites-cards h3 {
+.activites-cards .card-title {
     margin: 0;
     /* padding: 20px 19px 20px 19px; */
-    padding: 0 19px 0 19px;
+    padding: 0 19px;
     display: flex;
     align-items: center;
     flex-grow: 1;
-    font-size: 16px;
+}
+
+/**************************/
+/* ETAPE 9 : Pied de page */
+/**************************/
+/* Le container principal est de type Flex, pour que les blocs de menus s'affichent horizontalement */
+.main-footer {
+    display: flex;
+    background-color: var(--main-bg-color);
+}
+
+/* 3 blocs de menu répartis équitablement sur toute la largeur du conteneur principal */
+.menu-footer {
+    width: 33.33%;
+    padding: 20px;
+}
+
+/* Style du titre d'un bloc de menu */
+.menu-footer .card-title {
+    /* font-size: 16px;
+    font-weight: 700; */
+    padding:0;
+    margin:0;
+}
+
+/* 
+On utilise la structure des listes à puces pour afficher les points de menu .
+On supprime les puces, et les mages internes et externes
+*/
+.menu-footer ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+    font-weight: 400;
+}
+
+.menu-footer li {
+    margin-top: 15px;
 }
 
 
@@ -636,8 +678,8 @@ Display:flex pour pouvoir centrer le texte verticalement
     .populaires-cards {
         display: flex;
         flex-direction: row;
-        row-gap: 30px;          /* nouveau vs version initiales */
-        column-gap: 30px;       /* nouveau vs version initial */
+        row-gap: var(--gap-standard);          /* nouveau vs version initiales */
+        column-gap: var(--gap-standard);       /* nouveau vs version initial */
         flex-wrap: wrap;        /* nouveau vs version initial */
         /* justify-content: space-between; */ /* version initial */
     }
@@ -661,7 +703,7 @@ Display:flex pour pouvoir centrer le texte verticalement
     }
 
     /* 
-    On passe les cards des activités de 4 colonnes à 3 colonnes 
+    LS: On passe les cards des activités de 4 colonnes à 3 colonnes 
     Elles sont parfaitement alignées avec les cards hébergement et populaires
     */
     .activites-cards a { 

@@ -47,7 +47,7 @@
         <!-- Barre de recherches -->
         <div class="search-bar">
           <i class="fa-sharp fa-solid fa-location-dot fa-lg"></i>
-          <form class="search-form">
+          <form class="search-form search-filter-text">
             <input
               type="text"
               name="search-query"
@@ -59,7 +59,7 @@
         </div>
 
         <!-- barre de filtres -->
-        <div class="filter-bar">
+        <div class="filter-bar search-filter-text">
           <span>Filtres</span>
           <a href="#">
             <i class="fa-solid fa-money-bill-wave"></i>Economique
@@ -112,7 +112,6 @@
               </a>
 
               <!-- Hébergement 2 -->
-
               <a href="#">
                 <article class="card">
                   <img
@@ -137,7 +136,6 @@
               </a>
 
               <!-- Hébergement 3 -->
-
               <a href="#">
                 <article class="card">
                   <img
@@ -162,7 +160,6 @@
               </a>
 
               <!-- Hébergement 4 -->
-
               <a href="#">
                 <article class="card">
                   <img
@@ -187,7 +184,6 @@
               </a>
 
               <!-- Hébergement 5 -->
-
               <a href="#">
                 <article class="card">
                   <img
@@ -212,7 +208,6 @@
               </a>
 
               <!-- Hébergement 6 -->
-
               <a href="#">
                 <article class="card">
                   <img
@@ -236,8 +231,8 @@
                 </article>
               </a>
 
-              <!-- Hébergement 7 -->
-
+              <!-- Hébergement 7 A DECOMMENTER POUR TESTER LE COMPORTEMENT AVEC MOINS DE 3 CARDS SUR UNE LIGNE -->
+              <!-- 
               <a href="#">
                 <article class="card">
                   <img
@@ -259,10 +254,11 @@
                     ></i>
                   </div>
                 </article>
-              </a>
+              </a> 
+              -->
 
-              <!-- Hébergement 8 -->
-
+              <!-- Hébergement 8 A DECOMMENTER POUR TESTER LE COMPORTEMENT AVEC MOINS DE 3 CARDS SUR UNE LIGNE -->
+              <!-- 
               <a href="#">
                 <article class="card">
                   <img
@@ -284,8 +280,10 @@
                     ></i>
                   </div>
                 </article>
-              </a>
+              </a> 
+              -->
             </div>
+
             <a href="#" class="hebergement-plus-de-card">Afficher plus</a>
           </section>
           <!-- Fin Zone d'affichage des cartes des hébergements  -->
@@ -294,9 +292,10 @@
           <section class="populaires">
             <div class="populaires-title">
               <h2 class="section-title">Les plus populaires</h2>
-              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+              <i class="fa-solid fa-chart-line fa-lg" aria-hidden="true"></i>
             </div>
             <div class="populaires-cards">
+              <!-- Populaire 1 -->
               <a href="#">
                 <article class="card">
                   <img
@@ -324,6 +323,8 @@
                   </div>
                 </article>
               </a>
+
+              <!-- Populaire 2 -->
               <a href="#">
                 <article class="card">
                   <img
@@ -354,6 +355,7 @@
                 </article>
               </a>
 
+              <!-- Populaire 3 -->
               <a href="#">
                 <article class="card">
                   <img
@@ -382,7 +384,8 @@
                 </article>
               </a>
 
-              <a href="#">
+              <!-- Populaire 4 A DECOMMENTER POUR TESTER LE COMPORTEMENT AVEC MOINS DE 3 CARDS -->
+              <!-- <a href="#">
                 <article class="card">
                   <img
                     src="./images/hebergements/febrian-zakaria2.jpg"
@@ -408,8 +411,10 @@
                     </div>
                   </div>
                 </article>
-              </a>
+              </a> -->
 
+              <!-- Populaire 5 A DECOMMENTER POUR TESTER LE COMPORTEMENT AVEC MOINS DE 3 CARDS -->
+              <!-- 
               <a href="#">
                 <article class="card">
                   <img
@@ -437,8 +442,10 @@
                   </div>
                 </article>
               </a>
+              -->
             </div>
           </section>
+
           <!-- Fin Zone d'affichage des cartes des hébergements les plus populaires -->
         </div>
 
@@ -454,78 +461,83 @@
                   src="./images/activites/reno-laithienne.jpg"
                   alt="Image du Vieux-Port"
                 />
-                <h3>Vieux-Port</h3>
+                <h3 class="card-title">Vieux-Port</h3>
               </article>
             </a>
 
-            <!-- Activité 1 -->
-            <a href="#">
-              <article class="card">
-                <img
-                  src="./images/activites/reno-laithienne.jpg"
-                  alt="Image du Vieux-Port"
-                />
-                <h3>Vieux-Port</h3>
-              </article>
-            </a>
-
-            <!-- Activité 2 -->
+            <!-- Activité 3 -->
             <a href="#">
               <article class="card">
                 <img
                   src="./images/activites/paul-hermann.jpg"
                   alt="Image de Fort de pomègues"
                 />
-                <h3>Fort de pomègues</h3>
+                <h3 class="card-title">Fort de pomègues</h3>
               </article>
             </a>
 
             <!-- Activité 3 -->
-
             <a href="#">
               <article class="card">
                 <img
                   src="./images/activites/kilyan-sockalingum.jpg"
                   alt="Image de Parc national des calanques"
                 />
-                <h3>Parc national des calanques</h3>
+                <h3 class="card-title">Parc national des calanques</h3>
               </article>
             </a>
 
             <!-- Activité 4 -->
-
             <a href="#">
               <article class="card">
                 <img
                   src="./images/activites/florian-wehde.jpg"
                   alt="Image de Notre-Dame-de-la-Garde"
                 />
-                <h3>Notre-Dame-de-la-Garde</h3>
+                <h3 class="card-title">Notre-Dame-de-la-Garde</h3>
               </article>
             </a>
+
+            <!-- Activité 5 A DECOMMENTER POUR TESTER LE COMPORTEMENT AVEC MOINS DE 4 CARDS SUR UNE LIGNE -->
+            <!-- 
+            <a href="#">
+              <article class="card">
+                <img
+                  src="./images/activites/reno-laithienne.jpg"
+                  alt="Image du Vieux-Port"
+                />
+                <h3 class="card-title">Vieux-Port</h3>
+              </article>
+            </a> 
+            -->
           </div>
         </section>
-        <!-- </div> -->
         <!-- Fin Zone d'affichage des activités -->
       </main>
 
       <!-- Pied de page -->
-      <footer>
-        <div>
-          <h3>A propos</h3>
-          <a href="#">Fonctionnement du site</a>
-          <a href="#">Conditions générales</a>
-          <a href="#">Données de confidentialité</a>
+      <footer class="main-footer">
+        <div class="menu-footer">
+          <h3 class="card-title">A propos</h3>
+          <ul>
+            <li><a href="#">Fonctionnement du site</a></li>
+            <li><a href="#">Conditions générales</a></li>
+            <li><a href="#">Données de confidentialité</a></li>
+          </ul>
         </div>
-        <div>
-          <h3>Nos hébergements</h3>
-          <a href="#">Charte qualité</a>
-          <a href="#">Proposer votre hôtel</a>
+        <div class="menu-footer">
+          <h3 class="card-title">Nos hébergements</h3>
+          <ul>
+            <li><a href="#">Charte qualité</a></li>
+            <li><a href="#">Proposer votre hôtel</a></li>
+          </ul>
         </div>
-        <div>
-          <h3>Assistance</h3>
-          <a href="#">Centre d'aide</a>
-          <a href="#">Nous contacter</a>
+        <div class="menu-footer">
+          <h3 class="card-title">Assistance</h3>
+          <ul>
+            <li><a href="#">Centre d'aide</a></li>
+            <li><a href="#">Nous contacter</a></li>
+          </ul>
         </div>
       </footer>
       <!-- Fin de la zone d'affichage du pied de page -->
