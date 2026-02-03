@@ -18,6 +18,7 @@
 body {
     display: flex;
     justify-content: center;
+    margin:0;
 }
 
 .main-container {
@@ -78,7 +79,7 @@ h1 {
 /* 
 Texte dans les balises P (paragraphe)
 */
-P {
+p {
     font-size: 16px;
     font-weight: 400;
     margin: 0px;    
@@ -120,7 +121,7 @@ Liste des items du menu
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 68px;
+    column-gap: 68px;
     margin: 0;
     padding-bottom: 50px;
 }
@@ -140,7 +141,7 @@ item du menu de type ancre
 .main-nav ul a {
     font-size: 16px;
     font-weight: 400;
-    color: #000;
+    /* color: #000; */
     display:flex;
     height: 35px;
     align-items: flex-end;
@@ -264,7 +265,7 @@ et qu'ils puissent hériter des propriétrés d'étirement sur toute la hauteur 
     height: 50px;
     /* font-size: 18px;
     font-weight: 700; */
-    gap: 15px;
+    column-gap: 15px;
     margin-bottom: 35px;
     align-items: stretch; /* par défaut */
 }
@@ -535,9 +536,9 @@ styles du titre de la section Activité
 } */
 
 /*
-Style du container qu iaccueille les cards des activités
+Style du container qui accueille les cards des activités
 display:flex : les cards s'affichent en ligne côte-à-côte.
-gap: espace entre chaque card.
+column-gap: espace entre chaque card.
 flex-wrap:wrap : passe à la ligne suivante si plus de place sur la ligne courante
 space-between : les cards se répartissent équitablement sur 
 toute la ligne. Important: Le premier card est aligné sur le bord du conteneur 
@@ -691,7 +692,8 @@ On supprime les puces, et les mages internes et externes
     */
     .populaires-cards a {
         /* width: 30%; */ /* version initial */
-        flex: 0 1 calc(33.33% - 20px);  /* nouveau vs version initial */
+        flex: 0 1 calc(33.33% - (var(--gap-standard) * 2 / 3)); /* nouveau vs version initial */
+        /* flex: 0 1 calc(33.33% - 20px);   */
     }
 
     .populaires-cards .card-title {
@@ -706,8 +708,17 @@ On supprime les puces, et les mages internes et externes
     LS: On passe les cards des activités de 4 colonnes à 3 colonnes 
     Elles sont parfaitement alignées avec les cards hébergement et populaires
     */
-    .activites-cards a { 
+    /* .activites-cards a { 
         flex: 0 1 calc(33.33% - 20px);
+    } */
+
+    .activites-cards .card {
+        height:269px;
+    }
+
+    .activites-cards img { 
+        height:200px; 
+
     }
 }
 
