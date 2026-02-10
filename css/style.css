@@ -9,6 +9,7 @@
   --filter-bg-color: #deebff;
   --filter-border-color: #d9d9d9;
   --gap-standard: 30px;
+  --prc-space-by-hebergement-card: 50%;
 }
 
 .fa-solid {
@@ -155,8 +156,8 @@ Affichage dynamique lorsque la souris survole un item du menu
   de décalage du texte vers le bas lorsque la bordure apparaît.
 */
 .main-nav ul a:hover {
-  color: #0065fc;
-  border-top: #0065fc solid 2px;
+  color: var(--main-color);
+  border-top: var(--main-color) solid 2px;
 }
 
 /********************************/
@@ -227,6 +228,13 @@ au profit du changement de couleur des pointillés haut et bas
   border-color: var(--main-bg-color);
   border-width: 2px 0;
   border-style: solid;
+}
+
+/*
+Style du placeholder de la balise INPUT
+*/
+.search-form input::placeholder {
+  color: black;
 }
 
 /*

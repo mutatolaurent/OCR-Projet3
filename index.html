@@ -18,6 +18,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/png" href="./images/logo/favicon-32x32.png" />
   </head>
 
   <body>
@@ -51,8 +52,7 @@
             <input
               type="text"
               name="search-query"
-              value="Marseille, France"
-              placeholder="Où souhaitez-vous partir ?"
+              placeholder="Marseille, France"
             />
             <button type="submit">Rechercher</button>
           </form>
@@ -62,21 +62,23 @@
         <div class="filter-bar search-filter-text">
           <span>Filtres</span>
           <a href="#">
-            <i class="fa-solid fa-money-bill-wave"></i>Economique
+            <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i
+            >Economique
           </a>
           <a href="#">
-            <i
-              class="fa-duotone fa-solid fa-person"
-              style="--fa-primary-color: #0065fc; --fa-secondary-color: #0065fc"
-            ></i
+            <i class="fa-duotone fa-solid fa-person" aria-hidden="true"></i
             >Familial
           </a>
-          <a href="#"> <i class="fa-solid fa-heart"></i>Romantique </a>
-          <a href="#"> <i class="fa-solid fa-fire"></i>Nos pépites </a>
+          <a href="#">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>Romantique
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-fire" aria-hidden="true"></i>Nos pépites
+          </a>
         </div>
 
         <div class="search-result-info">
-          <i class="fa-solid fa-circle-info fa-lg"></i>
+          <i class="fa-solid fa-circle-info fa-lg" aria-hidden="true"></i>
           <p>Plus de 500 logements sont disponibles dans cette ville</p>
         </div>
 
@@ -142,7 +144,10 @@
                     src="./images/hebergements/reisetopia.jpg"
                     alt="Image de Hôtel les mouettes"
                   />
-                  <h3 class="card-title">Hôtel les mouettes</h3>
+                  <h3 class="card-title">
+                    Hôtel les mouettes Hôtel les mouettes Hôtel les mouettes
+                    Hôtel les mouettes Hôtel les mouettes
+                  </h3>
                   <p class="card-subtitle">
                     Nuit à partir de 76<span class="euro">€</span>
                   </p>
@@ -232,6 +237,7 @@
               </a>
 
               <!-- Hébergement 7 A DECOMMENTER POUR TESTER LE COMPORTEMENT AVEC MOINS DE 3 CARDS SUR UNE LIGNE -->
+
               <!-- 
               <a href="#">
                 <article class="card">
